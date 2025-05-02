@@ -20,6 +20,8 @@ int init_tesseract(void)
 
     if (tesseract == NULL)
         return ERROR;
+    tesseract->scale = 100.0;
+    tesseract->fov = 4.0;
     tesseract->rotation_speed = 0.01;
     tesseract->angle_xy = 0.0;
     tesseract->angle_xz = 0.0;

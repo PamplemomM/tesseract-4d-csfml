@@ -16,6 +16,18 @@ static int events(void)
             sfRenderWindow_close(WINDOW);
         if (event.type == sfEvtKeyPressed && event.key.code == sfKeyEscape)
             sfRenderWindow_close(WINDOW);
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyP)
+            TESSERACT->rotation_speed += 0.01;
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyM)
+            TESSERACT->rotation_speed -= 0.01;
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyF)
+            TESSERACT->fov += 0.1;
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyG)
+            TESSERACT->fov -= 0.1;
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyV)
+            TESSERACT->scale += 1.0;
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyC)
+            TESSERACT->scale -= 1.0;
     }
     return SUCCESS;
 }

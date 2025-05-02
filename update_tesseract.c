@@ -95,8 +95,8 @@ static int project_vertexes(sfVector3f projected_3d[SIZE],
 
     for (int i = 0; i < SIZE; i++) {
         rotation = get_4d_rotation(vertices[i]);
-        projected_3d[i] = project_4d_to_3d(rotation, FOV);
-        projected_2d[i] = project_3d_to_2d(projected_3d[i], FOV);
+        projected_3d[i] = project_4d_to_3d(rotation, TESSERACT->fov);
+        projected_2d[i] = project_3d_to_2d(projected_3d[i], TESSERACT->fov);
         projected_2d[i].x = projected_2d[i].x * SCALE + 800 / 2.0;
         projected_2d[i].y = projected_2d[i].y * SCALE + 600 / 2.0;
     }

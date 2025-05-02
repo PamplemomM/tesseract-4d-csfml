@@ -41,6 +41,8 @@ typedef struct {
 } edge_t;
 
 typedef struct tesseract_s {
+    float scale;
+    float fov;
     float rotation_speed;
     vector_4f_t vertices[16];
     edge_t edges[32];
