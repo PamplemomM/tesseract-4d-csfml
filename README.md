@@ -2,12 +2,6 @@
 
 Tesseract-4D-CSFML is a project that render and manipulate 4D objects in a 3D space on a 2D screen.
 
-## Features
-
-- Rendering of 4D objects projected into 3D.
-- Interactive controls for rotation and transformation.
-- Built with CSFML for efficient graphics rendering.
-
 ## Installation
 
 1. Clone the repository:
