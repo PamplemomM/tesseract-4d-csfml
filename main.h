@@ -21,7 +21,6 @@
 
     #define SIZE 16
 
-    #define FOV 4.0
     #define SCALE 100.0
 
     #define WINDOW (*get_window())

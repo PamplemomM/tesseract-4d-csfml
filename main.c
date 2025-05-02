@@ -25,9 +25,9 @@ static int events(void)
         if (event.type == sfEvtKeyPressed && event.key.code == sfKeyG)
             TESSERACT->fov -= 0.1;
         if (event.type == sfEvtKeyPressed && event.key.code == sfKeyV)
-            TESSERACT->scale += 1.0;
+            TESSERACT->scale += 10.0;
         if (event.type == sfEvtKeyPressed && event.key.code == sfKeyC)
-            TESSERACT->scale -= 1.0;
+            TESSERACT->scale -= 10.0;
     }
     return SUCCESS;
 }
