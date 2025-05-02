@@ -7,7 +7,7 @@
 
 NAME    =	tesseract
 
-SRCS	=	$(shell find . -type f -name '*.c')
+SRCS	=	$(shell find src/ -type f -name '*.c')
 
 CFLAGS	=	-Wall -Wextra -Wshadow -I./../include
 
