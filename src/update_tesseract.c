@@ -58,7 +58,7 @@ static sfVector3f project_4d_to_3d(vector_4f_t p, float fov)
     res.x = p.x * factor;
     res.y = p.y * factor;
     res.z = p.z * factor;
-    printf("Setting the projection: %f %f %f %f\n", p.x, p.y, p.z, p.w);
+    //printf("Setting the projection: %f %f %f %f\n", p.x, p.y, p.z, p.w);
     return res;
 }
 
@@ -82,23 +82,24 @@ static int update_rotations(void)
     t->angle_yz += t->rotation_speed;
     t->angle_yw += t->rotation_speed;
     t->angle_zw += t->rotation_speed;
-    printf("%f %f %f %f %f %f\n", t->angle_xy, t->angle_xz, t->angle_xw,
-        t->angle_yz, t->angle_yw, t->angle_zw);
+    //printf("%f %f %f %f %f %f\n", t->angle_xy, t->angle_xz, t->angle_xw,
+    //    t->angle_yz, t->angle_yw, t->angle_zw);
     return SUCCESS;
 }
 
 static int project_vertexes(sfVector3f projected_3d[SIZE],
     sfVector2f projected_2d[SIZE])
 {
+    tesseract_t *t = TESSERACT;
     vector_4f_t *vertices = TESSERACT->vertices;
     vector_4f_t rotation;
 
     for (int i = 0; i < SIZE; i++) {
         rotation = get_4d_rotation(vertices[i]);
-        projected_3d[i] = project_4d_to_3d(rotation, TESSERACT->fov);
-        projected_2d[i] = project_3d_to_2d(projected_3d[i], TESSERACT->fov);
-        projected_2d[i].x = projected_2d[i].x * TESSERACT->scale + 800 / 2.0;
-        projected_2d[i].y = projected_2d[i].y * TESSERACT->scale + 600 / 2.0;
+        projected_3d[i] = project_4d_to_3d(rotation, t->fov);
+        projected_2d[i] = project_3d_to_2d(projected_3d[i], t->fov);
+        projected_2d[i].x = projected_2d[i].x * t->scale + t->pos.x;
+        projected_2d[i].y = projected_2d[i].y * t->scale + t->pos.y;
     }
     return SUCCESS;
 }

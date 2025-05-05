@@ -24,10 +24,14 @@ static int events(void)
             TESSERACT->fov += 0.1;
         if (event.type == sfEvtKeyPressed && event.key.code == sfKeyG)
             TESSERACT->fov -= 0.1;
-        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyV)
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyZ)
             TESSERACT->scale += 10.0;
-        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyC)
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyS)
             TESSERACT->scale -= 10.0;
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyQ)
+            TESSERACT->pos.x += 50;
+        if (event.type == sfEvtKeyPressed && event.key.code == sfKeyD)
+            TESSERACT->pos.x -= 50;
     }
     return SUCCESS;
 }
@@ -46,8 +50,7 @@ int run(void)
 int main(void)
 {
     init_tesseract();
-    if (init_hypercube() == ERROR)
-        return ERROR;
+    init_hypercube();
     create_window(800, 600, "Tesseract Visualization");
     run();
     destroy_tesseract();

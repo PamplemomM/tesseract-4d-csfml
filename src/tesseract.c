@@ -20,6 +20,7 @@ int init_tesseract(void)
 
     if (tesseract == NULL)
         return ERROR;
+    tesseract->pos = (sfVector2f){400, 300};
     tesseract->scale = 100.0;
     tesseract->fov = 4.0;
     tesseract->rotation_speed = 0.01;
@@ -45,5 +46,19 @@ int destroy_tesseract(void)
     sfVertexArray_destroy(tesseract->lines);
     free(tesseract);
     *get_tesseract() = NULL;
+    return SUCCESS;
+}
+
+int move_vertices(sfVertexArray *array, sfVector2f pos)
+{
+    int cnt = sfVertexArray_getVertexCount(array);
+    sfVertex *current = NULL;
+
+    for (int i = 0; i < cnt; i++) {
+        current = sfVertexArray_getVertex(array, i);
+        current->position.x += pos.x;
+        current->position.y += pos.y;
+    }
+    printf("Moving\n");
     return SUCCESS;
 }

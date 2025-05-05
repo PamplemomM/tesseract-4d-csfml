@@ -40,6 +40,7 @@ typedef struct {
 } edge_t;
 
 typedef struct tesseract_s {
+    sfVector2f pos;
     float scale;
     float fov;
     float rotation_speed;
