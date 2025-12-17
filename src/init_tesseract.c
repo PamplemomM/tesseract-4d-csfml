@@ -1,13 +1,9 @@
-/*
-** EPITECH PROJECT, 2025
-** init_hypercube.c
-** File description:
-** Initialization of a 4D hypercube (tesseract)
-*/
 
-#include "main.h"
 
-static int init_hypercube_inside(int val, int w, int z)
+
+#include "../include/header_hypercube.h"
+
+static int init_tesseract_inside(int val, int w, int z)
 {
     vector_4f_t *vertices = TESSERACT->vertices;
 
@@ -23,7 +19,7 @@ static int init_hypercube_inside(int val, int w, int z)
     return val;
 }
 
-static int create_hypercube_inside(int val, int i, int j)
+static int create_tesseract_inside(int val, int i, int j)
 {
     int cpt = 0;
     vector_4f_t *vertices = TESSERACT->vertices;
@@ -45,18 +41,20 @@ static int create_hypercube_inside(int val, int i, int j)
     return val;
 }
 
-int init_hypercube(void)
+int init_tesseract(void)
 {
     int val = 0;
 
     for (int w = -1; w <= 1; w += 2) {
-        for (int z = -1; z <= 1; z += 2)
-        val = init_hypercube_inside(val, w, z);
+        for (int z = -1; z <= 1; z += 2) {
+            val = init_tesseract_inside(val, w, z);
+        }
     }
-    val = 0;
     for (int i = 0; i < SIZE; i++) {
-        for (int j = i + 1; j < SIZE; j++)
-        val = create_hypercube_inside(val, i, j);
+        for (int j = i + 1; j < SIZE; j++) {
+            val = create_tesseract_inside(val, i, j);
+        }
+    }
     }
     return SUCCESS;
 }

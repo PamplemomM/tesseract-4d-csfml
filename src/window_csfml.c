@@ -1,11 +1,6 @@
-/*
-** EPITECH PROJECT, 2025
-** window_csfml.c
-** File description:
-** Window related functions.
-*/
 
-#include "main.h"
+
+#include "../include/header_hypercube.h"
 
 sfRenderWindow **get_window(void)
 {

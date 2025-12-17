@@ -1,11 +1,7 @@
-/*
-** EPITECH PROJECT, 2025
-** tesseract.c
-** File description:
-** The file for the tesseract.
-*/
 
-#include "main.h"
+
+
+#include "../include/header_hypercube.h"
 
 tesseract_t **get_tesseract(void)
 {
@@ -14,7 +10,7 @@ tesseract_t **get_tesseract(void)
     return &tesseract;
 }
 
-int init_tesseract(void)
+int init_tesseract_values(void)
 {
     tesseract_t *tesseract = malloc(sizeof(tesseract_t) * 1);
 

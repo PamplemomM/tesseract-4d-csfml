@@ -1,11 +1,7 @@
-/*
-** EPITECH PROJECT, 2025
-** TESSERACT VISUALIZATION
-** File description:
-** Implementation of a 4D hypercube (tesseract)
-*/
 
-#include "main.h"
+
+
+#include "../include/header_hypercube.h"
 
 static int events(void)
 {
@@ -49,8 +45,8 @@ int run(void)
 
 int main(void)
 {
+    init_tesseract_values();
     init_tesseract();
-    init_hypercube();
     create_window(800, 600, "Tesseract Visualization");
     run();
     destroy_tesseract();

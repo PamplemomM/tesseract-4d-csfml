@@ -1,12 +1,8 @@
-/*
-** EPITECH PROJECT, 2025
-** header_event.h
-** File description:
-** Header file for the events.
-*/
 
-#ifndef EVENT_H
-    #define EVENT_H
+
+
+#ifndef HYPERCUBE_H
+    #define HYPERCUBE_H
 
     #include <SFML/Graphics.h>
     #include <math.h>
@@ -56,12 +52,12 @@ typedef struct tesseract_s {
 } tesseract_t;
 
 
-// --- init_hypercube.c ---
-int init_hypercube(void);
+// --- init_tesseract.c ---
+int init_tesseract(void);
 
 // --- tesseract.c ---
 tesseract_t **get_tesseract(void);
-int init_tesseract(void);
+int init_tesseract_values(void);
 int destroy_tesseract(void);
 
 // --- update_tesseract.c ---
@@ -72,4 +68,4 @@ sfRenderWindow **get_window(void);
 void create_window(unsigned int width, unsigned int height, char const *name);
 void destroy_window(void);
 
-#endif /* EVENT_H */
+#endif /* HYPERCUBE_H */

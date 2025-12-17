@@ -1,11 +1,6 @@
-/*
-** EPITECH PROJECT, 2025
-** update_tesseract.c
-** File description:
-** Update the tesseract.
-*/
 
-#include "main.h"
+
+#include "../include/header_hypercube.h"
 
 static int set_from_to(float *fromf, float *froms, float *tof, float *tos)
 {
