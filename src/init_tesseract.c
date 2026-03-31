@@ -55,6 +55,5 @@ int init_tesseract(void)
             val = create_tesseract_inside(val, i, j);
         }
     }
-    }
     return SUCCESS;
 }
